@@ -1,0 +1,42 @@
+.jumbotron {
+  height: 400px;
+  background-size: cover;
+  background-position: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  &.home {
+    background: linear-gradient(
+        transparentize(color($purple, 'default'), .65),
+        transparentize(color($teal, 'default'), .65)
+    ),
+    url("../img/header_home.jpg");
+    -webkit-background-size: cover;
+    background-size:  cover;
+    background-position: center;
+    height: 600px;
+  }
+  &.page {
+    background: linear-gradient(
+        transparentize(color($purple, 'default'), .65),
+        transparentize(color($teal, 'default'), .65)
+    ),
+    url("../img/header_home.jpg");
+    -webkit-background-size: cover;
+    background-size:  cover;
+    background-position: center;
+    height: 250px;
+  }
+  .headlines {
+    margin-bottom: 3em;
+  }
+  h1,h2,h3,h4 {
+    @include font-gothic;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+  }
+
+}

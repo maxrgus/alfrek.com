@@ -1,0 +1,61 @@
+.search {
+
+  width: 90%;
+  margin: 0 auto;
+  max-width: 600px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background: #fff;
+
+  .v-autocomplete {
+    width: calc(100%);
+    position: relative;
+    .v-autocomplete-input-group {
+      .v-autocomplete-input {
+        @include font-sans;
+        font-size: 1.5em;
+        padding: 10px 15px;
+        box-shadow: none;
+        width: calc(100% - 32px);
+        outline: none;
+        background-color: #fff;
+        color: color($purple, 'default');
+        border: none;
+  
+        &.v-autocomplete-selected {
+          .v-autocomplete-input {
+            background-color: #f2fff2;
+          }
+        }
+      }
+    }
+    .v-autocomplete-list {
+      width: calc(100% + 3.28em);
+      position: absolute;
+      text-align: left;
+      max-height: 400px;
+      overflow-y: auto;
+  
+      .v-autocomplete-list-item {
+        cursor: pointer;
+        background-color: #fff;
+        padding: 10px;
+        color: color($purple, 'default');
+        
+        &:hover {
+          background-color: #eee;
+          color: color($purple, 'lightest');                    
+        }
+      }
+    }
+  }
+
+  i {
+    font-size: 2.2em;
+    padding: 10px;
+    display: block;
+    background: #fff;
+    color: color($purple, 'lighter');    
+  }
+}

@@ -1,0 +1,188 @@
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0 2em;
+  align-items: center;
+  height: 80px;
+
+  .navbar-brand  {
+    @include font-gothic;
+    width: 180px;
+    display: flex;
+    font-size: 2rem;
+    display: block;
+    margin: 0;
+    padding: 0;
+    color: color($purple, 'default');
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    flex-flow: row;
+    padding: 0;
+    margin: 0 7em 0 0;
+
+    a {
+      @include font-sans;
+      color: color($purple, 'default');
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .9rem;
+      margin: 0 1em;
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+
+      &:hover {
+        color: color($purple, 'lightest');
+      }
+    }
+
+    li.active a {
+      color: color($purple, 'lightest');
+    }
+  }
+}
+
+.slideout-opener {
+  position: absolute;
+  right: 2em;
+  height: 80px;
+  border-left: 1px solid color($purple, 'lightest');
+  line-height: 80px;
+  padding-left: 2em;
+  text-align: center;
+  cursor: pointer;
+  color: color($purple, 'default');
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 600;
+
+  &:hover {
+    color: color($purple, 'lightest');
+  }
+}
+
+.slideout-close {
+  text-align: right;
+  margin-top: -.5em;
+  font-size: 3rem;
+  cursor: pointer;
+
+  a {
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition:         transform .8s ease-in-out;
+    display: inline-block;
+
+    &:hover {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.slideout {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 360px;
+  height: 100vh;
+  padding: 30px;
+  background-color: #fff;
+  transform: translateX(110%);
+  transition: transform 0.6s ease;
+  z-index: 99999999;
+  color: color($purple, 'default');
+  overflow-y: auto;
+
+  &.isOpen {
+    transform: translateX(0%);
+  }
+
+
+  nav {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .slideout-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        width: 100%;
+        display: block;
+        padding: 1rem;
+
+        a {
+          font-size: 1rem;
+          text-transform: uppercase;
+          font-weight: 700;
+          text-align: center;
+          color: color($purple, 'default');
+          cursor: pointer;
+
+          &:hover {
+            color: color($purple, 'lightest');
+          }
+        }
+
+        &.active a {
+          border-bottom: 1px solid color($purple, 'lightest');;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .navigation ul {
+    display: flex;
+    margin: 0;
+  }
+  .slideout-opener {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navigation {
+    height: 100px;
+  }
+  .navbar-brand img {
+    width: 300px;
+  }
+  .slideout-opener {
+    height: 100px;
+    line-height: 100px;
+  }
+  .slideout {
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .navigation ul a {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-height: 658px) {
+  .slideout nav .slideout-menu li a {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .slideout nav .slideout-menu li a {
+    font-size: 2rem;
+  }
+}
+
+
+
