@@ -13,7 +13,7 @@ export default {
       menu: [
         {
           name: 'browse',
-          url: '/browse'
+          url: '/solutions'
         },
         {
           name: 'about',

@@ -1,0 +1,89 @@
+.solution-single {
+
+    h1 {
+        @include font-gothic;
+        color: color($purple, 'default');
+        font-size: 2.8rem;
+    }
+
+    .byline {
+        display: block;
+        margin: 1em 0;
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        display: block;
+        text-transform: uppercase;
+        @include font-sans-medium;
+        font-size: 1.6rem;
+        color: color($teal, 'default');
+    }
+
+    .body {
+        @include font-sans;
+        margin-bottom: 3em;
+    }
+
+    .sidebar {
+        .profile {
+            position: relative;
+            height: 175px;
+            width: 100%;
+            
+            img {
+                display: block;
+                margin: 1em auto;
+    
+                &.profile-picture {
+                    border-radius: 50%;
+                }
+
+                &.uni-logo {
+                    position: absolute;
+                    bottom: 0;
+                    background: #fff;
+                    border-radius: 50%;
+                    left: 10px;
+                }
+            }
+        }
+
+        .author {
+            text-align: center;
+        }
+
+        .rate {
+            display: flex;
+            margin: 1em auto;
+            border-bottom: 2px solid color($purple, 'default');
+            i {
+                font-size: 2rem;
+                cursor: pointer;
+                text-align: center;
+                display: block;
+                margin-bottom: 1em;
+                width: 50%;
+                color: color($teal, 'default');
+
+                span {
+                    @include font-gothic;
+                    margin-top: .5rem; 
+                    display: block;
+                    color: #000;
+                    font-size: .8rem;
+                }
+
+                &:hover {
+                    &.fa-thumbs-up {
+                        color: color($teal, 'lightest');
+                    }
+                    
+                    &.fa-thumbs-down {
+                        color: color($teal, 'darkest');
+                    }
+                }
+            }
+        }
+    }
+}

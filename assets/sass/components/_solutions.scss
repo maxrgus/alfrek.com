@@ -1,0 +1,90 @@
+.browse-header {
+    padding: 1em;
+    margin: 0 1em;
+
+    input {
+        @include font-gothic;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        width: 50%;
+        height: 50px;
+        line-height: 80px;
+        font-size: 2rem;
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid color($purple, 'darker');
+        }
+    }
+}
+
+.browse-filter {
+    margin: 1em 1em;    
+
+}
+
+.solutions {
+
+    .solution {
+        margin: 1em 0;
+
+        .solution-inner-wrap {
+            height: 100%;
+            margin: 0 1em;
+            border: 1px solid #ccc;
+        }
+
+        .solution-content {
+            padding: .6em;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+
+            .solution-header {
+                margin: .5em 0;
+
+                a {
+                    @include font-sans-medium;
+                    font-size: 1.1rem;
+                    display: block;
+                    color: color($teal, 'default');
+                    text-decoration: none;
+
+                    &:hover {
+                        color: color($teal, 'lightest');
+                    }
+                }
+            }
+
+            .solution-body {
+
+                
+            }
+
+            .solution-footer {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                height: 50px;
+                
+                .roles {
+                    position: relative;
+                    display: flex;
+                    flex-flow: row;
+                    align-items: center;
+                    
+                    .role {
+                        height: 20px;
+                        display: inline-block;
+                        background: color($orange, 'default');
+                        font-size: .7rem;
+                        color: #fff;
+                        padding: 2px 10px 2px 10px;
+                        margin: .2em;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
