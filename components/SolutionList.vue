@@ -1,12 +1,17 @@
 <template>
     <div class="row solutions justify-content-between">
         <article 
-            class="col-10 solution"
+            class="col-12 col-md-4 solution"
             v-for="solution in solutions"
             :key="solution.id"
         >
             <div class="row solution-inner-wrap">
-                <div class="col-8 solution-content">
+                <div 
+                    class="col-12 solution-thumbnail"
+                    style="background-image: url(/header_home.jpg); background-position: center; background-size: cover;">
+
+                </div>
+                <div class="col-12 solution-content">
                 <header class="solution-header">
                 <router-link :to="'/' + solution.slug" tag="a">{{ solution.title }}</router-link>
                 <small>by {{ solution.author.firstName }}  {{ solution.author.lastName }}</small>
@@ -29,11 +34,6 @@
                 </div>
                 </footer>
             </div>
-            <div 
-                class="col-4"
-                style="background-image: url(/header_home.jpg); background-position: center; background-size: cover;">
-
-            </div>
             </div>
 
         </article>
@@ -43,7 +43,7 @@
 export default {
   props: {
     solutions: {
-      type: Object,
+      type: Array,
       required: true
     }
   }

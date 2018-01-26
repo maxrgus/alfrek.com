@@ -34,6 +34,12 @@
             border: 1px solid #ccc;
         }
 
+        .solution-thumbnail {
+            height: 80px;
+            width: 100%;
+            display: block;
+        }
+
         .solution-content {
             padding: .6em;
             display: flex;
